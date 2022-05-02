@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from 'react';
 import './styles/App.css';
+import { newError } from './utils/newError';
 import foto1 from './images/location.svg';
 
 function App() {
@@ -16,33 +17,50 @@ function App() {
     isCep(cep);
 
     if (!error) {
-      const result = document.querySelector('.result') as HTMLDivElement;
-      searchCep(cep);
-      return result.classList.remove('hidden');
+      return searchCep(cep);
     }
   }
 
   function isCep(cep: string): void {
     const errorParagraph = document.querySelectorAll('.errorParagraph');
     errorParagraph.forEach((err) => err.remove());
-    if (cep.length !== 9 && cep.length !== 8) return newError('CEP Inválido');
+
+    if (cep.length !== 9 && cep.length !== 8) {
+      error = true;
+      return newError('CEP Inválido');
+    }
+
     error = false;
   }
 
-  function newError(msg: string): void {
-    const form = document.querySelector('.form') as HTMLFormElement;
-    const p = document.createElement('p');
-    const result = document.querySelector('.result') as HTMLDivElement;
-    const e = document.querySelector('.CEP') as HTMLInputElement;
+  async function searchCep(cep: string) {
+    try {
+      const result = document.querySelector('.result') as HTMLDivElement;
 
-    p.classList.add('errorParagraph');
-    p.innerText = msg;
-    form.insertAdjacentElement('afterend', p);
+      const script = `https://viacep.com.br/ws/${cep}/json/`;
+      fetch(script).then((response) => response.json);
 
-    e.classList.add('errorInput');
-    e.classList.remove('success');
-    result.classList.add('hidden');
-    error = true;
+      const data = await fetch(script);
+      const location = await data.json();
+
+      const { erro } = location;
+
+      if (erro) {
+        error = true;
+        return newError('Não foi possível localizar um endereço com esse CEP.');
+      }
+
+      const { logradouro, bairro, localidade, uf } = await location;
+      setStreet(logradouro);
+      setDistrict(bairro);
+      setCity(localidade);
+      setRegion(uf);
+
+      return result.classList.remove('hidden');
+    } catch (err) {
+      error = true;
+      return newError('Algo deu errado, tente novamente mais tarde!');
+    }
   }
 
   function validCep(value: string): void {
@@ -67,33 +85,6 @@ function App() {
     }
   }
 
-  async function searchCep(cep: string) {
-    try {
-      const script = `https://viacep.com.br/ws/${cep}/json/`;
-      fetch(script)
-        .then((response) => response.json)
-        .then(console.log);
-
-      const data = await fetch(script);
-      const location = await data.json();
-
-      const { erro } = location;
-
-      if (erro) {
-        error = true;
-        return newError('CEP Inválido');
-      }
-
-      const { logradouro, bairro, localidade, uf } = location;
-      setStreet(logradouro);
-      setDistrict(bairro);
-      setCity(localidade);
-      setRegion(uf);
-    } catch (error) {
-      return newError('Algo deu errado, tente novamente mais tarde!');
-    }
-  }
-
   return (
     <div className="container">
       <div className="content">
@@ -112,6 +103,7 @@ function App() {
           <label htmlFor="">
             <p className="paragraph">Digite seu CEP:</p>
             <input
+              placeholder="Ex: 08474012"
               maxLength={cep.indexOf('-') === -1 ? 8 : 9}
               type="string"
               className="CEP success"

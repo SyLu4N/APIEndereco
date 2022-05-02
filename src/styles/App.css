@@ -156,32 +156,17 @@ input{
 .errorParagraph{
   margin-top: 5px;
   color: var(--colorError);
+  max-width: 380px;
 }
 
-@media (max-width: 675px){
+@media (max-width: 1210px){
   body{
-    padding: 20px 20px;
-  }
-
-  .container{
-    display: flex;
-    justify-content: center;
-    margin: auto;
-  }
-
-  .error{
-    display: none;
-  }
-}
-
-@media (max-width: 1098px){
-  body{
-    padding: 20px 100px;
+    padding: 20px 80px;
   }
 
 }
 
-@media (max-width: 1098px){
+@media (max-width: 1000px){
   body{
     padding: 20px 50px;
   }
@@ -196,3 +181,29 @@ input{
   }
 
 }
+
+@media (max-width: 610px){
+  body{
+    padding: 20px 20px;
+  }
+
+  .image{
+    display: block;
+  }
+
+  .image img{
+    position: absolute;
+    top: 0;
+  }
+
+  .container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .error{
+    display: none;
+  }
+}
+
