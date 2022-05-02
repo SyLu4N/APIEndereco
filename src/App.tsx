@@ -1,6 +1,6 @@
 import React, { FormEvent, useState } from 'react';
 import './styles/App.css';
-/* import foto1 from './images/location.svg'; */
+import foto1 from './images/location.svg';
 
 function App() {
   const [cep, setCep] = useState('');
@@ -106,7 +106,7 @@ function App() {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
             delectus corporis sed assumenda velit blanditiis iste at, mollitia
           </p>
-          <div className="error">{/* <img src={foto1} alt="" /> */}</div>
+          <div className="error">{<img src={foto1} alt="" />}</div>
         </div>
         <form className="form" onSubmit={(e) => handleSubmit(e)}>
           <label htmlFor="">

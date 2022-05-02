@@ -44,6 +44,7 @@ header{
 .image{
   display: flex;
   justify-content: space-between;
+  height: 150px;
 }
 
 .image p{
@@ -52,10 +53,8 @@ header{
 }
 
 .image img{
-  position: absolute;
-  top: 8%;
-  right: 15%;
-  width: 470px;
+  margin-top: -80px;
+  width: 30vw;
 }
 
 .error{
@@ -159,6 +158,41 @@ input{
   color: var(--colorError);
 }
 
-@media  {
+@media (max-width: 675px){
+  body{
+    padding: 20px 20px;
+  }
+
+  .container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .error{
+    display: none;
+  }
+}
+
+@media (max-width: 1098px){
+  body{
+    padding: 20px 100px;
+  }
+
+}
+
+@media (max-width: 1098px){
+  body{
+    padding: 20px 50px;
+  }
+
+  .image img{
+    margin-left: 60px;
+    width: 40vw;
+  }
+
+  .image p{
+    min-width: 350px;
+  }
 
 }
