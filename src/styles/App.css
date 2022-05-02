@@ -8,9 +8,10 @@
 }
 
 :root{
-  --colorbackground: #DEE9FE;
+  --colorbackground: #dbe7ff;
   --colorstandard: #394863;
   --colorparagraph: #2b2d30;
+  --colorError: rgba(255, 0, 0, 0.671);
 }
 
 body{
@@ -23,7 +24,7 @@ body{
 }
 
 header{
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .logo{
@@ -42,6 +43,7 @@ header{
 
 .image{
   display: flex;
+  justify-content: space-between;
 }
 
 .image p{
@@ -50,7 +52,10 @@ header{
 }
 
 .image img{
-  width: 400px;
+  position: absolute;
+  top: 8%;
+  right: 15%;
+  width: 470px;
 }
 
 .error{
@@ -80,7 +85,15 @@ label{
   font-size: 1.5em;
 }
 
-.CEP:focus{
+.success:focus{
+  box-shadow: 0px 0px 4px var(--colorstandard);
+}
+
+.errorInput{
+  box-shadow: 0px 0px 4px var(--colorError);
+}
+
+.errorInput input:focus{
   box-shadow: 0px 0px 4px var(--colorstandard);
 }
 
@@ -89,10 +102,10 @@ label button{
   align-items: center;
   cursor: pointer;
   position: absolute;
-  bottom: -12%;
-  right: 2%;
-  height: 40px;
-  padding: 8px;
+  bottom: -16%;
+  right: 1%;
+  height: 46px;
+  padding: 16px;
   border-radius: 40px;
   background-image: linear-gradient(to right, #84A7E8, #394863) ;
   color: #fff;
@@ -129,7 +142,7 @@ label button:hover{
 }
 
 .hidden{
-  display: block;
+  display: none;
 }
 
 input{
@@ -139,4 +152,13 @@ input{
   box-shadow: 0px 0px 2px var(--colorstandard);
   padding-left: 20px;
   font-size: 1.5em;
+}
+
+.errorParagraph{
+  margin-top: 5px;
+  color: var(--colorError);
+}
+
+@media  {
+
 }
