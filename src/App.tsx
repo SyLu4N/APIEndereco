@@ -1,7 +1,8 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import './styles/App.css';
 import { newError } from './utils/newError';
-import foto1 from './images/location.svg';
+import { searchCep } from './utils/searchCep';
+//import foto1 from './images/location.svg';
 
 function App() {
   const [cep, setCep] = useState('');
@@ -9,17 +10,46 @@ function App() {
   const [district, setDistrict] = useState('');
   const [city, setCity] = useState('');
   const [region, setRegion] = useState('');
+  const [loading, setLoading] = useState(false);
 
   let error: boolean;
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    isCep(cep);
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    try {
+      e.preventDefault();
+      isCep(cep);
 
-    if (!error) {
-      return searchCep(cep);
+      if (!error) {
+        setLoading(true);
+        const newCEP = await searchCep(cep);
+        setLoading(false);
+        setStreet(newCEP.logradouro);
+        setCity(newCEP.localidade);
+        setDistrict(newCEP.bairro);
+        setRegion(newCEP.uf);
+      }
+    } catch (err) {
+      return;
     }
   }
+
+  useEffect(() => {
+    const button = document.querySelector('button') as HTMLButtonElement;
+    const result = document.querySelector('.result') as HTMLDivElement;
+    const loader = document.querySelector(
+      '.loader-container',
+    ) as HTMLDivElement;
+
+    if (loading) {
+      button.disabled = true;
+      result.classList.add('hidden');
+      loader.classList.remove('hidden');
+    } else {
+      button.disabled = false;
+      loader.classList.add('hidden');
+      result.classList.remove('hidden');
+    }
+  }, [loading, setLoading]);
 
   function isCep(cep: string): void {
     const errorParagraph = document.querySelectorAll('.errorParagraph');
@@ -31,36 +61,6 @@ function App() {
     }
 
     error = false;
-  }
-
-  async function searchCep(cep: string) {
-    try {
-      const result = document.querySelector('.result') as HTMLDivElement;
-
-      const script = `https://viacep.com.br/ws/${cep}/json/`;
-      fetch(script).then((response) => response.json);
-
-      const data = await fetch(script);
-      const location = await data.json();
-
-      const { erro } = location;
-
-      if (erro) {
-        error = true;
-        return newError('Não foi possível localizar um endereço com esse CEP.');
-      }
-
-      const { logradouro, bairro, localidade, uf } = await location;
-      setStreet(logradouro);
-      setDistrict(bairro);
-      setCity(localidade);
-      setRegion(uf);
-
-      return result.classList.remove('hidden');
-    } catch (err) {
-      error = true;
-      return newError('Algo deu errado, tente novamente mais tarde!');
-    }
   }
 
   function validCep(value: string): void {
@@ -97,7 +97,7 @@ function App() {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
             delectus corporis sed assumenda velit blanditiis iste at, mollitia
           </p>
-          <div className="error">{<img src={foto1} alt="" />}</div>
+          <div className="error">{/*<img src={foto1} alt="" />*/}</div>
         </div>
         <form className="form" onSubmit={(e) => handleSubmit(e)}>
           <label htmlFor="">
@@ -110,18 +110,26 @@ function App() {
               onChange={(e) => validCep(e.target.value)}
               value={cep}
             />
-            <button>Buscar CEP</button>
+            <button className="button">Buscar CEP</button>
           </label>
         </form>
-        <div className="result hidden">
-          <p className="paragraph">Cep: {cep}</p>
-          <div className="flex">
-            <input type="text" className="rua" value={street} disabled />
-            <input type="text" className="bairro" disabled value={district} />
+        <main>
+          <div className="loader-container hidden">
+            <div className="loader">
+              <div></div>
+              <div></div>
+            </div>
           </div>
-          <input type="text" className="cidade" disabled value={city} />
-          <input type="text" className="uf" disabled value={region} />
-        </div>
+          <div className="result hidden teste">
+            <p className="paragraph">Cep: {cep}</p>
+            <div className="flex">
+              <input type="text" className="rua" value={street} disabled />
+              <input type="text" className="bairro" disabled value={district} />
+            </div>
+            <input type="text" className="cidade" disabled value={city} />
+            <input type="text" className="uf" disabled value={region} />
+          </div>
+        </main>
       </div>
     </div>
   );
