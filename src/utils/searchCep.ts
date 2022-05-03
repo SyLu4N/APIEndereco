@@ -1,9 +1,8 @@
 import { newError } from './newError';
 
 export async function searchCep(cep: string) {
+  const result = document.querySelector('.result') as HTMLDivElement;
   try {
-    const result = document.querySelector('.result') as HTMLDivElement;
-
     const script = `https://viacep.com.br/ws/${cep}/json/`;
     fetch(script).then((response) => response.json);
 
@@ -21,6 +20,7 @@ export async function searchCep(cep: string) {
 
     return location;
   } catch (err) {
+    result.classList.add('teste');
     return newError('Algo deu errado, tente novamente mais tarde!');
   }
 }

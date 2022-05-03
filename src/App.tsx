@@ -10,7 +10,7 @@ function App() {
   const [district, setDistrict] = useState('');
   const [city, setCity] = useState('');
   const [region, setRegion] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   let error: boolean;
 
@@ -20,9 +20,9 @@ function App() {
       isCep(cep);
 
       if (!error) {
-        setLoading(true);
+        setIsLoading(true);
         const newCEP = await searchCep(cep);
-        setLoading(false);
+        setIsLoading(false);
         setStreet(newCEP.logradouro);
         setCity(newCEP.localidade);
         setDistrict(newCEP.bairro);
@@ -40,7 +40,7 @@ function App() {
       '.loader-container',
     ) as HTMLDivElement;
 
-    if (loading) {
+    if (isLoading) {
       button.disabled = true;
       result.classList.add('hidden');
       loader.classList.remove('hidden');
@@ -49,7 +49,7 @@ function App() {
       loader.classList.add('hidden');
       result.classList.remove('hidden');
     }
-  }, [loading, setLoading]);
+  }, [isLoading, setIsLoading]);
 
   function isCep(cep: string): void {
     const errorParagraph = document.querySelectorAll('.errorParagraph');
