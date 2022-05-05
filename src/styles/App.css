@@ -19,11 +19,7 @@ body{
   background-color: var(--colorbackground);
 }
 
-.content{
-  margin: auto;
-}
-
-header{
+nav{
   margin-bottom: 40px;
 }
 
@@ -240,10 +236,6 @@ main{
 
 .loader-container div:nth-child(2) {
   animation-delay: -0.5s;
-}
-
-.teste{
-  display: none;
 }
 
 button:disabled{
