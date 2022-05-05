@@ -4,7 +4,6 @@ import { newError } from './utils/newError';
 import { searchCep } from './utils/searchCep';
 
 import foto1 from './images/location.svg';
-import { Form } from './components/Form';
 
 function App() {
   const [cep, setCep] = useState('');
@@ -16,7 +15,7 @@ function App() {
 
   let error: boolean;
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent) {
     try {
       e.preventDefault();
       isCep(cep);
@@ -101,11 +100,20 @@ function App() {
           </p>
           <div className="error">{<img src={foto1} alt="" />}</div>
         </div>
-        <Form
-          onCep={cep}
-          onValidCep={validCep}
-          onHandleSubmit={() => handleSubmit}
-        />
+        <form className="form" onSubmit={(e) => handleSubmit(e)}>
+          <label htmlFor="">
+            <p className="paragraph">Digite seu CEP:</p>
+            <input
+              placeholder="Ex: 08474012"
+              maxLength={cep.indexOf('-') === -1 ? 8 : 9}
+              type="string"
+              className="CEP success"
+              onChange={(e) => validCep(e.target.value)}
+              value={cep}
+            />
+            <button className="button">Buscar CEP</button>
+          </label>
+        </form>
         <main>
           <div className="loader-container hidden">
             <div className="loader">
