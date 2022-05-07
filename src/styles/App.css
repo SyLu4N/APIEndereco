@@ -58,32 +58,20 @@ header{
 
 .save{
   display: flex;
-  gap: 6px;
-  position: absolute;
-  bottom: -20%;
-  right: 5%;
+  justify-content: right;
 }
 
-.save input{
-  position: relative;
-}
-
-.save button{
-  position: absolute;
-  background-image: linear-gradient(to right, #84A7E8, #394863) ;
-  border-radius: 40px;
-  width: 172px;
-  font-size: 1.5rem;
-  color: white;
-  transition: 300ms;
-  right: 1%;
-  top: 4%;
-  height: 45px;
-}
-
-.save button:hover{
+.save p{
+  font-style: italic;
   cursor: pointer;
-  filter: brightness(90%);
+  margin-top: 0.5rem;
+  transition: 200ms;
+}
+
+.save p:hover {
+  filter: brightness(0.4);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .p{
@@ -155,6 +143,10 @@ label button:hover{
   flex-direction: column;
 }
 
+.result{
+  margin-top: 2rem;
+}
+
 .result input{
   margin: 4px 0;
   background-color: #ffffff7c;
@@ -166,7 +158,7 @@ label button:hover{
   font-weight: bold;
 }
 
-.result > input:nth-child(3){
+.result input:nth-child(3){
   margin-right: 10px;
   width: 270px;
 }
@@ -300,4 +292,82 @@ button:disabled{
 	}
 }
 
+.inputModalCep{
+  width: 150px;
+}
 
+.overlayModal{
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modalContent{
+  height: 200px;
+  position: relative;
+  padding: 1rem 2rem;
+  background: rgb(238, 238, 238);
+  border-radius: 0.25rem;
+}
+
+.modalContent h1{
+  margin-bottom: 1rem;
+}
+
+.modalContent input:disabled{
+  background-color: #fff!important;
+}
+
+.closeModal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.closeModal img{
+  transition: 300ms;
+}
+
+.closeModal img:hover{
+  filter: brightness(0.7);
+}
+
+.flexModal{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  position: relative;
+}
+
+.flexModal button{
+  position: absolute;
+  background-color:var(--colorstandard);
+  bottom: -75%;
+  left: 32%;
+  width: 200px;
+  border-radius:0.25rem ;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 300ms;
+  color: white;
+}
+
+.flexModal button:hover{
+  filter: brightness(0.9);
+}
+
+.flexModal div{
+  background-color: var(--colorstandard);
+  height: 0.5px;
+  width: 110%;
+}
