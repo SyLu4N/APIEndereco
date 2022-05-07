@@ -312,7 +312,7 @@ button:disabled{
   height: 200px;
   position: relative;
   padding: 1rem 2rem;
-  background: rgb(238, 238, 238);
+  background: var(--colorbackground);
   border-radius: 0.25rem;
 }
 
@@ -325,6 +325,8 @@ button:disabled{
 }
 
 .closeModal{
+  background-color: transparent;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -370,4 +372,23 @@ button:disabled{
   background-color: var(--colorstandard);
   height: 0.5px;
   width: 110%;
+}
+
+.tableResult{
+  width: 500px;
+  position: absolute;
+  top: 100%;
+  left: -10%;
+}
+
+.tableResult thead{
+  height: 40px;
+}
+
+.tableResult tr{
+  text-align: left;
+}
+
+.tableResult td, .tableResult th{
+  text-align: center;
 }

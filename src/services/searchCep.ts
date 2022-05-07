@@ -1,4 +1,4 @@
-import { newError } from './newError';
+import { newError } from '../utils/newError';
 
 export async function searchCep(cep: string) {
   try {

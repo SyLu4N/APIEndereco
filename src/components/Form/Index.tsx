@@ -1,6 +1,6 @@
 import React, { FormEvent, SetStateAction } from 'react';
 import { newError } from '../../utils/newError';
-import { searchCep } from '../../utils/searchCep';
+import { searchCep } from '../../services/searchCep';
 import { Cep } from './InputCep';
 
 interface FormProps {

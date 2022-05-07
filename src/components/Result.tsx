@@ -15,7 +15,6 @@ export function Result(props: ResultProps) {
 
   function modelResultOpen() {
     setIsModelResult(true);
-    console.log('bati');
   }
 
   function modelResultClose() {
@@ -44,6 +43,8 @@ export function Result(props: ResultProps) {
           isOpen={isModelResult}
           modelResultClose={modelResultClose}
           cep={props.cep}
+          street={props.street}
+          city={props.city}
         />
       </div>
     </div>
