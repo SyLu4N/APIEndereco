@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { ModalResult } from './ModalResult';
+import { ModalResult } from '../ModalResult';
+
+import { Container, Save } from './styles';
 
 interface ResultProps {
   cep: string;
@@ -22,22 +24,17 @@ export function Result(props: ResultProps) {
   }
 
   return (
-    <div className={props.isResult ? 'result' : 'hidden'}>
+    <Container className={props.isResult ? 'result' : 'hidden'}>
       <div>
-        <p className="paragraph">Cep: {props.cep}</p>
+        <p>Cep: {props.cep}</p>
         <div className="flex">
-          <input type="text" className="rua" value={props.street} disabled />
-          <input
-            type="text"
-            className="bairro"
-            disabled
-            value={props.district}
-          />
+          <input type="text" value={props.street} disabled />
+          <input type="text" disabled value={props.district} />
         </div>
-        <input type="text" className="cidade" disabled value={props.city} />
-        <input type="text" className="uf" disabled value={props.region} />
+        <input type="text" disabled value={props.city} />
+        <input type="text" disabled value={props.region} />
       </div>
-      <div className="save">
+      <Save>
         <p onClick={modelResultOpen}>Salvar CEP</p>
         <ModalResult
           isOpen={isModelResult}
@@ -46,7 +43,7 @@ export function Result(props: ResultProps) {
           street={props.street}
           city={props.city}
         />
-      </div>
-    </div>
+      </Save>
+    </Container>
   );
 }

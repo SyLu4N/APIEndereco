@@ -5,6 +5,7 @@ import { Loading } from './components/Loading';
 import { Result } from './components/Result';
 import { Form } from './components/Form/Index';
 import { Header } from './components/Header';
+import { GlobaStyle } from './styles/global';
 
 export function SearchCEP() {
   const [cep, setCep] = useState('');
@@ -44,6 +45,7 @@ export function SearchCEP() {
           />
         )}
       </main>
+      <GlobaStyle />
     </>
   );
 }

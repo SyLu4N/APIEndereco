@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Container } from './styles';
+
 interface ArrayObject {
   id: number;
   nome: string;
@@ -16,7 +18,7 @@ export function SaveApi(props: SaveApiProps) {
   return (
     <>
       {props.resultCeps.length >= 1 ? (
-        <table className="tableResult">
+        <Container>
           <thead>
             <tr>
               <th>Lugar</th>
@@ -35,7 +37,7 @@ export function SaveApi(props: SaveApiProps) {
               </tr>
             ))}
           </tbody>
-        </table>
+        </Container>
       ) : (
         ''
       )}
