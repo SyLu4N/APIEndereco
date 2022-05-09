@@ -1,4 +1,6 @@
 import React, { FormEvent, SetStateAction } from 'react';
+
+import { Container } from './styles';
 import { newError } from '../../utils/newError';
 import { searchCep } from '../../services/searchCep';
 import { Cep } from './InputCep';
@@ -57,7 +59,7 @@ export function Form(props: FormProps) {
   }
 
   return (
-    <form className="form" onSubmit={(e) => handleSubmit(e)}>
+    <Container className="form" onSubmit={(e) => handleSubmit(e)}>
       <label htmlFor="">
         <p className="paragraph">Digite seu CEP:</p>
         <Cep cep={props.cep} setCep={props.setCep} />
@@ -65,6 +67,6 @@ export function Form(props: FormProps) {
           Buscar CEP
         </button>
       </label>
-    </form>
+    </Container>
   );
 }

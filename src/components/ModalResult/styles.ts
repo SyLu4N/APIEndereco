@@ -1,34 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  .overlayModal {
-    padding: 4rem;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-  }
-
-  .modalContent {
-    height: 200px;
-    position: relative;
-    padding: 1rem 2rem;
-    background: var(--colorbackground);
-    border-radius: 0.25rem;
-  }
-
-  .modalContent h1 {
-    margin-bottom: 1rem;
-  }
-
-  .modalContent input:disabled {
-    background-color: #fff !important;
-  }
-`;
+export const Container = styled.div``;
 
 export const Form = styled.form`
   display: flex;
@@ -39,7 +11,7 @@ export const Form = styled.form`
   button {
     position: absolute;
     background-color: var(--colorstandard);
-    bottom: -75%;
+    bottom: -100%;
     left: 32%;
     width: 200px;
     border-radius: 0.25rem;

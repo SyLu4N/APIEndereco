@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { CepInput } from './styles';
+
 interface CepProps {
   cep: string;
   setCep: (value: string) => void;
@@ -29,7 +31,7 @@ export function Cep(props: CepProps) {
   }
 
   return (
-    <input
+    <CepInput
       placeholder="Ex: 08474012"
       maxLength={props.cep.indexOf('-') === -1 ? 8 : 9}
       type="string"

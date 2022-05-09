@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './styles/App.css';
 
 import { Loading } from './components/Loading';
 import { Result } from './components/Result';

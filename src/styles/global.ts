@@ -130,4 +130,53 @@ button:disabled{
 		opacity: 0;
 	}
 }
+
+.error{
+  width: 400px;
+}
+
+label{
+  position: relative;
+  font-weight: bold;
+  color: #444040;
+}
+
+.hidden{
+  display: none;
+}
+
+.errorParagraph{
+  margin-top: 5px;
+  color: var(--colorError);
+  max-width: 380px;
+}
+
+.overlayModal {
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .modalContent {
+    height: 200px;
+    position: relative;
+    padding: 1rem 2rem;
+    background: var(--colorbackground);
+    border-radius: 0.25rem;
+  }
+
+  .modalContent h1 {
+    margin-bottom: 1rem;
+  }
+
+  .modalContent input:disabled {
+    background-color: #fff !important;
+  }
+
 `;
