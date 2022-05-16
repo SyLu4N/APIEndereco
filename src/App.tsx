@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Loading } from './components/Loading';
 import { Result } from './components/Result';
 import { Form } from './components/Form/Index';
-import { Header } from './components/Header';
+import { Main } from './components/Main';
 import { GlobaStyle } from './styles/global';
 
 export function SearchCEP() {
@@ -17,7 +17,7 @@ export function SearchCEP() {
 
   return (
     <>
-      <Header />
+      <Main />
       <Form
         isLoading={isLoading}
         cep={cep}

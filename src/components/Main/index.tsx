@@ -6,14 +6,7 @@ import foto1 from '../../assets/location.svg';
 import { api } from '../../services/api';
 import { SaveApi } from '../SaveApi';
 
-export function Header() {
-  const [resultCeps, setResultCeps] = useState([]);
-
-  useEffect(() => {
-    api.get('/').then((response) => setResultCeps(response.data));
-    console.log(resultCeps);
-  }, [setResultCeps]);
-
+export function Main() {
   return (
     <Container>
       <Nav />
@@ -25,7 +18,7 @@ export function Header() {
       </p>
       <Image>
         <img src={foto1} alt="" />
-        <SaveApi resultCeps={resultCeps} />
+        <SaveApi />
       </Image>
     </Container>
   );

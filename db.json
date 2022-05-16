@@ -1,5 +1,32 @@
 {
   "ceps": [
-
+    {
+      "nome": "Casa",
+      "cep": "08674-011",
+      "rua": "Rua Benjamin Constant",
+      "city": "Suzano",
+      "id": 1
+    },
+    {
+      "nome": "Trabalho",
+      "cep": "08573-000",
+      "rua": "Avenida Ítalo Adami",
+      "city": "Itaquaquecetuba",
+      "id": 2
+    },
+    {
+      "nome": "Casa",
+      "cep": "08674-011",
+      "rua": "Rua Benjamin Constant",
+      "city": "Suzano",
+      "id": 3
+    },
+    {
+      "nome": "Morena",
+      "cep": "79051-904",
+      "rua": "Rua do Sucre",
+      "city": "Campo Grande",
+      "id": 4
+    }
   ]
 }

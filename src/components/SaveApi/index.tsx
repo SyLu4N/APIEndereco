@@ -1,23 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { api } from '../../services/api';
 
 import { Container } from './styles';
 
-interface ArrayObject {
-  id: number;
-  nome: string;
-  rua: string;
-  city: string;
-  cep: string;
-}
+export function SaveApi() {
+  const [resultCeps, setResultCeps] = useState([]);
 
-interface SaveApiProps {
-  resultCeps: Array<ArrayObject>;
-}
+  useEffect(() => {
+    api.get('/').then((response) => setResultCeps(response.data));
+  }, [setResultCeps]);
 
-export function SaveApi(props: SaveApiProps) {
   return (
     <>
-      {props.resultCeps.length >= 1 ? (
+      {resultCeps.length >= 1 ? (
         <Container>
           <thead>
             <tr>
@@ -28,7 +23,7 @@ export function SaveApi(props: SaveApiProps) {
             </tr>
           </thead>
           <tbody>
-            {props.resultCeps.map((local) => (
+            {resultCeps.map((local) => (
               <tr key={local.id}>
                 <td>{local.nome}</td>
                 <td>{local.rua}</td>

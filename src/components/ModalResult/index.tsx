@@ -22,18 +22,24 @@ export function ModalResult(props: ModalResultProps) {
     try {
       e.preventDefault();
       setIsLoading(true);
-      const dataEnv = {
+
+      const data = {
         nome: title,
         cep: props.cep,
         rua: props.street,
         city: props.city,
       };
-      await api.post('/', dataEnv);
-      setTimeout(async () => {
+
+      await api.post('/', data);
+
+      setTimeout(() => {
         setIsLoading(false);
         props.modelResultClose();
       }, 3000);
     } catch (error) {
+      const erros = document.querySelectorAll('.errorParagraph');
+      erros.forEach((erro) => erro.remove());
+      props.modelResultClose();
       setIsLoading(false);
       return newError('Algo deu errado tente novamente mais tarde!');
     }
