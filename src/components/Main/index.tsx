@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { Container, Image } from './styles';
 import { Nav } from '../nav';
 import foto1 from '../../assets/location.svg';
-import { api } from '../../services/api';
 import { SaveApi } from '../SaveApi';
 
 export function Main() {
