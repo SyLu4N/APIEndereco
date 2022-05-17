@@ -8,6 +8,7 @@ export function Loading() {
       <ContainerLoading>
         <Loader>
           <div></div>
+
           <div></div>
         </Loader>
       </ContainerLoading>

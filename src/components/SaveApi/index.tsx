@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import React from 'react';
+import { Local } from '../../App';
 
 import { Container } from './styles';
 
-export function SaveApi() {
-  const [resultCeps, setResultCeps] = useState([]);
+interface SaveApiProps {
+  resultCeps: Array<Local>;
+}
 
-  useEffect(() => {
-    api.get('/').then((response) => setResultCeps(response.data));
-  }, [setResultCeps]);
-
+export function SaveApi({ resultCeps }: SaveApiProps) {
   return (
     <>
       {resultCeps.length >= 1 ? (

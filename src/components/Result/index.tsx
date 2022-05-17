@@ -10,6 +10,8 @@ interface ResultProps {
   city: string;
   region: string;
   isResult: boolean;
+  resultCeps: object[];
+  setResultCeps: (value: object[]) => void;
 }
 
 export function Result(props: ResultProps) {
@@ -42,6 +44,8 @@ export function Result(props: ResultProps) {
           cep={props.cep}
           street={props.street}
           city={props.city}
+          resultCeps={props.resultCeps}
+          setResultCeps={props.setResultCeps}
         />
       </Save>
     </Container>

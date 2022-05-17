@@ -15,18 +15,11 @@
       "id": 2
     },
     {
-      "nome": "Casa",
-      "cep": "08674-011",
-      "rua": "Rua Benjamin Constant",
-      "city": "Suzano",
-      "id": 3
-    },
-    {
       "nome": "Morena",
-      "cep": "79051-904",
-      "rua": "Rua do Sucre",
+      "cep": "79073-790",
+      "rua": "Rua Gumercindo Garcia Barbosa",
       "city": "Campo Grande",
-      "id": 4
+      "id": 3
     }
   ]
 }

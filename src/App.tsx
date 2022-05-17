@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Loading } from './components/Loading';
 import { Result } from './components/Result';
 import { Form } from './components/Form/Index';
 import { Main } from './components/Main';
 import { GlobaStyle } from './styles/global';
+import { api } from './services/api';
+
+export interface Local {
+  id: string;
+  nome: string;
+  rua: string;
+  city: string;
+  cep: string;
+}
 
 export function SearchCEP() {
   const [cep, setCep] = useState('');
@@ -14,10 +23,15 @@ export function SearchCEP() {
   const [region, setRegion] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isResult, setIsResult] = useState(false);
+  const [resultCeps, setResultCeps] = useState([]);
+
+  useEffect(() => {
+    api.get('/').then((response) => setResultCeps(response.data));
+  }, [setResultCeps]);
 
   return (
     <>
-      <Main />
+      <Main resultCeps={resultCeps} />
       <Form
         isLoading={isLoading}
         cep={cep}
@@ -35,6 +49,8 @@ export function SearchCEP() {
           <Loading />
         ) : (
           <Result
+            resultCeps={resultCeps}
+            setResultCeps={setResultCeps}
             cep={cep}
             street={street}
             region={region}

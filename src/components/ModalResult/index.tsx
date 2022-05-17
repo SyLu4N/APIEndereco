@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import Modal from 'react-modal';
 
 import { api } from '../../services/api';
@@ -12,11 +12,23 @@ interface ModalResultProps {
   cep: string;
   street: string;
   city: string;
+  resultCeps: object[];
+  setResultCeps: (value: object[]) => void;
 }
 
 export function ModalResult(props: ModalResultProps) {
   const [title, setTitle] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [teste, setTeste] = useState([]);
+
+  async function testeF() {
+    const teste = await api.get('/');
+    setTeste(teste.data);
+  }
+
+  useEffect(() => {
+    testeF();
+  }, []);
 
   async function sendSaveCep(e: FormEvent) {
     try {
@@ -31,10 +43,12 @@ export function ModalResult(props: ModalResultProps) {
       };
 
       await api.post('/', data);
+      const newCeps = [...teste, data];
 
       setTimeout(() => {
-        setIsLoading(false);
+        props.setResultCeps(newCeps);
         props.modelResultClose();
+        setIsLoading(false);
       }, 3000);
     } catch (error) {
       const erros = document.querySelectorAll('.errorParagraph');

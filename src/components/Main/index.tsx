@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { Container, Image } from './styles';
 import { Nav } from '../nav';
 import foto1 from '../../assets/location.svg';
 import { SaveApi } from '../SaveApi';
+import { Local } from '../../App';
 
-export function Main() {
+interface MainProps {
+  resultCeps: Array<Local>;
+}
+
+export function Main(props: MainProps) {
   return (
     <Container>
       <Nav />
@@ -17,7 +22,7 @@ export function Main() {
       </p>
       <Image>
         <img src={foto1} alt="" />
-        <SaveApi />
+        <SaveApi resultCeps={props.resultCeps} />
       </Image>
     </Container>
   );
