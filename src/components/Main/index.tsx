@@ -1,10 +1,9 @@
 import React from 'react';
 
 import { Container, Image } from './styles';
-import { Nav } from '../nav';
 import foto1 from '../../assets/location.svg';
 import { SaveApi } from '../SaveApi';
-import { Local } from '../../App';
+import { Local } from '../../interfaces/Local';
 
 interface MainProps {
   resultCeps: Array<Local>;
@@ -13,8 +12,6 @@ interface MainProps {
 export function Main(props: MainProps) {
   return (
     <Container>
-      <Nav />
-
       <h1>CONSULTA CEP</h1>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum delectus

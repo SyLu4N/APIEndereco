@@ -7,5 +7,8 @@ export const Container = styled.nav`
     color: var(--colorstandard);
     font-size: 2em;
     font-variant: small-caps;
+    a {
+      text-decoration: none;
+    }
   }
 `;

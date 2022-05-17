@@ -9,16 +9,31 @@ export const Form = styled.form`
   position: relative;
 
   button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     position: absolute;
-    background-color: var(--colorstandard);
-    bottom: -100%;
     left: 32%;
+    bottom: -100%;
+
+    background-color: var(--colorstandard);
     width: 200px;
     border-radius: 0.25rem;
     font-size: 2rem;
     cursor: pointer;
     transition: 300ms;
     color: white;
+
+    .loading {
+      animation: 60s loading infinite;
+    }
+  }
+
+  @keyframes loading {
+    0% {
+      transform: rotate(60000deg);
+    }
   }
 
   button:hover {

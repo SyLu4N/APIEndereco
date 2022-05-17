@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.header`
+export const Container = styled.div`
   position: relative;
 
   p {
@@ -23,5 +23,15 @@ export const Image = styled.div`
   img {
     margin-top: -80px;
     width: 30vw;
+  }
+
+  div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    p {
+      position: absolute;
+    }
   }
 `;

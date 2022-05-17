@@ -1,5 +1,6 @@
 import React, { FormEvent, useEffect, useState } from 'react';
 import Modal from 'react-modal';
+import { BiLoaderAlt } from 'react-icons/bi';
 
 import { api } from '../../services/api';
 import closeModal from '../../assets/closeModal.svg';
@@ -19,15 +20,15 @@ interface ModalResultProps {
 export function ModalResult(props: ModalResultProps) {
   const [title, setTitle] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [teste, setTeste] = useState([]);
+  const [local, setLocal] = useState([]);
 
-  async function testeF() {
-    const teste = await api.get('/');
-    setTeste(teste.data);
+  async function Local() {
+    const localStorage = await api.get('/');
+    setLocal(localStorage.data);
   }
 
   useEffect(() => {
-    testeF();
+    Local();
   }, []);
 
   async function sendSaveCep(e: FormEvent) {
@@ -43,13 +44,13 @@ export function ModalResult(props: ModalResultProps) {
       };
 
       await api.post('/', data);
-      const newCeps = [...teste, data];
+      const newCeps = [...local, data];
 
       setTimeout(() => {
         props.setResultCeps(newCeps);
         props.modelResultClose();
         setIsLoading(false);
-      }, 3000);
+      }, 1000);
     } catch (error) {
       const erros = document.querySelectorAll('.errorParagraph');
       erros.forEach((erro) => erro.remove());
@@ -91,7 +92,7 @@ export function ModalResult(props: ModalResultProps) {
 
           <div>
             <button type="submit" disabled={title.length <= 2 || isLoading}>
-              Salvar
+              {isLoading ? <BiLoaderAlt className="loading" /> : 'Salvar'}
             </button>
           </div>
         </Form>

@@ -7,7 +7,6 @@ export const GlobaStyle = createGlobalStyle`
   box-sizing: border-box;
   border: none;
   outline: none;
-  color: var(--colorstandard);
 }
 
 :root{
@@ -55,7 +54,6 @@ input{
   body{
     padding: 20px 80px;
   }
-
 }
 
 @media (max-width: 1000px){
@@ -106,6 +104,10 @@ main{
   align-items: center;
   width: 355px;
   height: 215px;
+}
+
+h1, h2, h3, h4, h5, h6, p, td, tr, th, a{
+  color: var(--colorstandard);
 }
 
 button:disabled{
