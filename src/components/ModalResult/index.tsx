@@ -33,10 +33,11 @@ export function ModalResult(props: ModalResultProps) {
         city: props.city,
       };
 
-      createLocal(data);
       setTimeout(() => {
+        createLocal(data);
         setIsLoading(false);
         props.modelResultClose();
+        setTitle('');
       }, 1000);
     } catch (error) {
       const erros = document.querySelectorAll('.errorParagraph');

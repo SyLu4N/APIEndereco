@@ -1,3 +1,18 @@
 {
-  "ceps": []
+  "ceps": [
+    {
+      "nome": "Casa",
+      "cep": "08674-011",
+      "rua": "Rua Benjamin Constant",
+      "city": "Suzano",
+      "id": 1
+    },
+    {
+      "nome": "Trabalho",
+      "cep": "08573-000",
+      "rua": "Avenida Ítalo Adami",
+      "city": "Itaquaquecetuba",
+      "id": 2
+    }
+  ]
 }
