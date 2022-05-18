@@ -24,7 +24,7 @@ export function SaveApi() {
                 <tr key={local.id}>
                   <td>{local.nome}</td>
                   <td>{local.rua}</td>
-                  <td>{local.city}</td>
+                  <td>{local.cidade}</td>
                   <td>{local.cep}</td>
                 </tr>
               ))}

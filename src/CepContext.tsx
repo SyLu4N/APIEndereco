@@ -26,7 +26,8 @@ export function CepProvider({ children }: CepProviderProps) {
       nome: cep.nome,
       cep: cep.cep,
       rua: cep.rua,
-      city: cep.city,
+      cidade: cep.cidade,
+      bairro: cep.bairro,
     };
 
     await api.post('/', data);

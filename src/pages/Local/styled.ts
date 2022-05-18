@@ -99,6 +99,7 @@ export const Void = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 4px;
 
     height: 30px;
     width: 200px;

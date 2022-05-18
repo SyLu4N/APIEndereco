@@ -7,8 +7,9 @@ interface ResultProps {
   cep: string;
   street: string;
   district: string;
-  city: string;
+  cidade: string;
   region: string;
+  bairro: string;
   isResult: boolean;
 }
 
@@ -31,7 +32,7 @@ export function Result(props: ResultProps) {
           <input type="text" value={props.street} disabled />
           <input type="text" disabled value={props.district} />
         </div>
-        <input type="text" disabled value={props.city} />
+        <input type="text" disabled value={props.cidade} />
         <input type="text" disabled value={props.region} />
       </div>
       <Save>
@@ -41,7 +42,8 @@ export function Result(props: ResultProps) {
           modelResultClose={modelResultClose}
           cep={props.cep}
           street={props.street}
-          city={props.city}
+          cidade={props.cidade}
+          bairro={props.bairro}
         />
       </Save>
     </Container>

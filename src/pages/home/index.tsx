@@ -37,7 +37,8 @@ export default function SearchCEP() {
             cep={cep}
             street={street}
             region={region}
-            city={city}
+            bairro={district}
+            cidade={city}
             district={district}
             isResult={isResult}
           />

@@ -12,7 +12,8 @@ interface ModalResultProps {
   modelResultClose: () => void;
   cep: string;
   street: string;
-  city: string;
+  cidade: string;
+  bairro: string;
 }
 
 export function ModalResult(props: ModalResultProps) {
@@ -30,7 +31,8 @@ export function ModalResult(props: ModalResultProps) {
         nome: title,
         cep: props.cep,
         rua: props.street,
-        city: props.city,
+        cidade: props.cidade,
+        bairro: props.bairro,
       };
 
       setTimeout(() => {
