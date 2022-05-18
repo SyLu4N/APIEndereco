@@ -33,7 +33,7 @@ export function SaveApi({ resultCeps }: SaveApiProps) {
             </tbody>
           </Content>
           <div>
-            <a href="/teste">Detalhes</a>
+            <a href="/locais">Detalhes</a>
           </div>
         </Container>
       ) : (

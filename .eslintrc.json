@@ -22,6 +22,12 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   },
   "parser": "@typescript-eslint/parser"
 }

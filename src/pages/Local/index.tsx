@@ -1,48 +1,39 @@
 import React from 'react';
-import { Container } from './styled';
+import { ImBin } from 'react-icons/im';
+
+import { Container, Content } from './styled';
 
 export function Local() {
   return (
     <Container>
-      <table>
-        <thead>
-          <tr>
-            <th>Lugar</th>
-            <th>Logradouro</th>
-            <th>Número</th>
-            <th>Bairro</th>
-            <th>Cidade</th>
-            <th>Cep</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>Casa</td>
-            <td>Beijamin Constant</td>
-            <td>287</td>
-            <td>Centro</td>
-            <td>Suzano</td>
-            <td>08674-011</td>
-          </tr>
-          <tr>
-            <td>Casa</td>
-            <td>Beijamin Constant</td>
-            <td>287</td>
-            <td>Centro</td>
-            <td>Suzano</td>
-            <td>08674-011</td>
-          </tr>
-          <tr>
-            <td>Casa</td>
-            <td>Beijamin Constant</td>
-            <td>287</td>
-            <td>Centro</td>
-            <td>Suzano</td>
-            <td>08674-011</td>
-          </tr>
-        </tbody>
-      </table>
+      <Content>
+        <span>Casa</span> <div>|</div>
+        <p>Beijamin Constant, Centro - Suzano</p>
+        <a href="">
+          <ImBin />
+        </a>
+      </Content>
+      <Content>
+        <span>Trabalho</span> <div>|</div>
+        <p>Alameda Fernando Costa, Jardim Imperador - Suzano</p>
+        <a href="">
+          <ImBin />
+        </a>
+      </Content>
+      <Content>
+        <span>Namorada</span> <div>|</div>
+        <p>Sem nome dois, Miguel Badra - Suzano</p>
+        <a href="">
+          <ImBin />
+        </a>
+      </Content>
+      <Content>
+        <span>Trabalho2</span> <div>|</div>
+        <p>Av. Italo Adami, Vila Zeferina - Itaquaquecetuba</p>
+        <a href="">
+          <ImBin />
+        </a>
+      </Content>
     </Container>
   );
 }
