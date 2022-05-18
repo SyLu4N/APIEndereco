@@ -37,6 +37,17 @@ label button{
   font-size: 1.3rem;
 }
 
+a{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+button{
+  cursor: pointer;
+}
+
 label button:hover{
   filter: brightness(90%);
 }

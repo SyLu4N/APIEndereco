@@ -18,7 +18,7 @@ export const Image = styled.div`
   justify-content: end;
   align-items: center;
   right: 0;
-  bottom: -50%;
+  bottom: -70%;
 
   img {
     margin-top: -80px;

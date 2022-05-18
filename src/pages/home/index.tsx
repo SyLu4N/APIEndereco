@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { Loading } from '../../components/Loading';
 import { Result } from '../../components/Result';
 import { Form } from '../../components/Form/Index';
 import { Main } from '../../components/Main';
-import { api } from '../../services/api';
 
 export default function SearchCEP() {
   const [cep, setCep] = useState('');
@@ -14,15 +13,10 @@ export default function SearchCEP() {
   const [region, setRegion] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isResult, setIsResult] = useState(false);
-  const [resultCeps, setResultCeps] = useState([]);
-
-  useEffect(() => {
-    api.get('/').then((response) => setResultCeps(response.data));
-  }, [setResultCeps]);
 
   return (
     <>
-      <Main resultCeps={resultCeps} />
+      <Main />
       <Form
         isLoading={isLoading}
         cep={cep}
@@ -40,8 +34,6 @@ export default function SearchCEP() {
           <Loading />
         ) : (
           <Result
-            resultCeps={resultCeps}
-            setResultCeps={setResultCeps}
             cep={cep}
             street={street}
             region={region}

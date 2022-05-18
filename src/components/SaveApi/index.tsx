@@ -1,13 +1,11 @@
-import React from 'react';
-import { Local } from '../../interfaces/Local';
+import React, { useContext } from 'react';
+import { CepContext } from '../../CepContext';
 
 import { Container, Content } from './styles';
 
-interface SaveApiProps {
-  resultCeps: Array<Local>;
-}
+export function SaveApi() {
+  const { resultCeps } = useContext(CepContext);
 
-export function SaveApi({ resultCeps }: SaveApiProps) {
   return (
     <>
       {resultCeps.length >= 1 ? (

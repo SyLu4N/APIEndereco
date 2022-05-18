@@ -3,13 +3,8 @@ import React from 'react';
 import { Container, Image } from './styles';
 import foto1 from '../../assets/location.svg';
 import { SaveApi } from '../SaveApi';
-import { Local } from '../../interfaces/Local';
 
-interface MainProps {
-  resultCeps: Array<Local>;
-}
-
-export function Main(props: MainProps) {
+export function Main() {
   return (
     <Container>
       <h1>CONSULTA CEP</h1>
@@ -19,7 +14,7 @@ export function Main(props: MainProps) {
       </p>
       <Image>
         <img src={foto1} alt="" />
-        <SaveApi resultCeps={props.resultCeps} />
+        <SaveApi />
       </Image>
     </Container>
   );

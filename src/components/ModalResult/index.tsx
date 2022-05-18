@@ -1,11 +1,11 @@
-import React, { FormEvent, useEffect, useState } from 'react';
+import React, { FormEvent, useContext, useState } from 'react';
 import Modal from 'react-modal';
 import { BiLoaderAlt } from 'react-icons/bi';
 
-import { api } from '../../services/api';
 import closeModal from '../../assets/closeModal.svg';
 import { newError } from '../../utils/newError';
 import { Form, CloseModal, Container } from './styles';
+import { CepContext } from '../../CepContext';
 
 interface ModalResultProps {
   isOpen: boolean;
@@ -13,23 +13,13 @@ interface ModalResultProps {
   cep: string;
   street: string;
   city: string;
-  resultCeps: object[];
-  setResultCeps: (value: object[]) => void;
 }
 
 export function ModalResult(props: ModalResultProps) {
   const [title, setTitle] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [local, setLocal] = useState([]);
 
-  async function Local() {
-    const localStorage = await api.get('/');
-    setLocal(localStorage.data);
-  }
-
-  useEffect(() => {
-    Local();
-  }, []);
+  const { createLocal } = useContext(CepContext);
 
   async function sendSaveCep(e: FormEvent) {
     try {
@@ -43,13 +33,10 @@ export function ModalResult(props: ModalResultProps) {
         city: props.city,
       };
 
-      await api.post('/', data);
-      const newCeps = [...local, data];
-
+      createLocal(data);
       setTimeout(() => {
-        props.setResultCeps(newCeps);
-        props.modelResultClose();
         setIsLoading(false);
+        props.modelResultClose();
       }, 1000);
     } catch (error) {
       const erros = document.querySelectorAll('.errorParagraph');
