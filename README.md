@@ -27,4 +27,3 @@
       <img src="./assets/searchCepVs.gif" alt="Código da aplicação" />
     </a>
   </h6>
- <h2></h2>
