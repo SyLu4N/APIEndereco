@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+# Learning JavaScript
+ Projeto com foco nos estudos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ ✓ Working With Javascript! <br>
+ ✓ Working With TypeScript! <br>
+ ✓ Working With React! <br>
+ ✓ Working With React-Context! <br>
+ ✓ Working With React-Router-Dom! <br>
+ ✓ Working With React-Hooks! <br>
+ ✓ Working With React-Icons! <br>
+ ✓ Working With Axios! <br>
+ ✓ Working With Json-Server! <br>
 
-## Available Scripts
+ <h1>✅Projects</h1>
+ <h3>📚 Funcionamento</h3>
 
-In the project directory, you can run:
+ <h6 align="center">
+   <a href="https://sylu4n.github.io/JsUdemy/exercicios/Relogio/index.html">
+    <img src="./assets/searchCep.mp4" alt="Funcionamento" />
+   </a>
+ </h6>
+ <h2></h2>
 
-### `npm start`
+ <h3>📚 Cronômetro</h3>
+ <h6 align="center">
+    <a href="https://sylu4n.github.io/JsUdemy/exercicios/Cronometro/index.html">
+      <img src="./imgReadme/Cronometro.gif" alt="Funcionamento do cronômetro" />
+    </a><br>
+    Ferramentas usadas: Date / setInterval / functions / keyFrames
+  </h6>
+ <h2></h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h3>📚 IMC</h3>
+ <h6 align="center">
+    <a href="https://sylu4n.github.io/JsUdemy/exercicios/IMC/index.html">
+      <img src="./imgReadme/IMC.gif" alt="Funcionamento do IMC" />
+    </a><br>
+    Ferramentas usadas: functions / keyFrames
+ </h6>
+ <h2></h2>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h3>📚 Calculadora</h3>
+ <h6 align="center">
+    <a href="https://sylu4n.github.io/JsUdemy/exercicios/Calculadora/index.html">
+      <img src="./imgReadme/Calculadora.gif" alt="Funcionamento do IMC" />
+    </a><br>
+     Ferramentas usadas: functions
+ </h6>
+ <h2></h2>
 
-### `npm test`
+<h3>📚 Lista</h3>
+<a href="https://sylu4n.github.io/JsUdemy/exercicios/Lista/index.html">
+  <img src="./imgReadme/lista.gif" alt="Funcionamento da Lista" />
+</a>
+Ferramentas usadas: functions / JSON / LocalStorage
+<h2></h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h3>📚 Agenda</h3>
+<h6 align="center">
+  <a href="https://www.linkedin.com/posts/luan-sim%C3%B5es-617492236_com-base-nos-estudos-da-udemy-consegui-desenvolver-activity-6915748380409274370-2Zz3?utm_source=linkedin_share&utm_medium=member_desktop_web">
+    <img src="./imgReadme/AgendaGif.gif" alt="Funcionamento da Lista" />
+  </a>
+</h6>
+<br>
+ Ferramentas usadas: Webpack / JSON / LocalStorage / Node.js / BABEL / NoSQL / EJS / mongoose / Validator / Class / Function /entre outros...
 
-### `npm run build`
+<h2></h2>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h3>📚 MySchool</h3>
+<h6 align="center">
+  <a href="https://www.linkedin.com/posts/luan-sim%C3%B5es-617492236_com-base-nos-estudos-em-react-desenvolvi-activity-6918023647324479488-r-PV?utm_source=linkedin_share&utm_medium=member_desktop_web">
+    <img src="./imgReadme/SchoolGif.gif" alt="Funcionamento da MySchool">
+  </a>
+</h6>
+<br>
+ Ferramentas usadas: React / React-Redux / React-Router-Dom / React-Icons / Axios / History / Styled / Webpack / JSON / LocalStorage / Node.js / BABEL / MySQL / mongoose / Validator /entre outros...
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<h3>✅Certificate</h2>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h6 align="center">
+  <a href="https://sylu4n.github.io/JsUdemy/imgReadme/Certificado.jpg">
+    <img src="./imgReadme/Certificado.jpg" alt="Certificado Udemy" />
+  </a>
+</h6>
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
