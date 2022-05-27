@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
-export const Container = styled.table`
-  width: 550px;
+export const Container = styled.div`
   position: absolute;
   top: 100%;
-  left: -18%;
-  display: block;
+  right: 0;
+
+  min-width: 550px;
 
   div {
-    display: flex;
-    justify-content: right;
+    text-align: right;
+    min-width: 550px;
 
     a {
       display: inline-block;

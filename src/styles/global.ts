@@ -4,27 +4,24 @@ interface ThemeProps {
   theme: {
     body: string;
     text: string;
+    info: string;
   };
 }
 
 export const GlobaStyle = createGlobalStyle`
-
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     border: none;
     outline: none;
-
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    font-family: 'Quicksand', sans-serif;
   }
 
   :root{
     --colorbackground: ${({ theme }: ThemeProps) => theme.body};
     --colorstandard: ${({ theme }: ThemeProps) => theme.text};
-    --colorparagraph: #2b2d30;
+    --colorparagraph: ${({ theme }: ThemeProps) => theme.info};
     --colorError: rgba(255, 0, 0, 0.671);
   }
 
@@ -36,32 +33,50 @@ export const GlobaStyle = createGlobalStyle`
   label button{
     display: flex;
     align-items: center;
-    cursor: pointer;
+
     position: absolute;
-    bottom: -16%;
+    bottom: -14%;
     right: 1%;
+
     height: 46px;
     padding: 16px;
-    border-radius: 40px;
-    background-image: linear-gradient(to right, #84A7E8, #394863) ;
+
     color: #fff;
+    background-image: linear-gradient(to right, #84A7E8, #394863) ;
+    border-radius: 40px;
+
+    cursor: pointer;
     transition: 300ms;
     font-size: 1.3rem;
+
+    &:hover{
+      filter: brightness(90%);
+    }
   }
 
-  a{
+  h1 {
+    font-family: 'Dosis', sans-serif;
+  }
+
+  p {
+    color: var(--colorparagraph);
+  }
+
+  a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
+
     text-decoration: none;
   }
 
   button{
     cursor: pointer;
-  }
 
-  label button:hover{
-    filter: brightness(90%);
+    &:disabled{
+      opacity: 0.5;
+      cursor: no-drop;
+    }
   }
 
   input{
@@ -71,6 +86,10 @@ export const GlobaStyle = createGlobalStyle`
     box-shadow: 0px 0px 2px var(--colorstandard);
     padding-left: 20px;
     font-size: 1.5em;
+  }
+
+  h1, h2, h3, h4, h5, h6, td, tr, th, a{
+    color: var(--colorstandard);
   }
 
   @media (max-width: 1210px){
@@ -118,24 +137,6 @@ export const GlobaStyle = createGlobalStyle`
     .error{
       display: none;
     }
-  }
-
-  main{
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    width: 355px;
-    height: 215px;
-  }
-
-  h1, h2, h3, h4, h5, h6, p, td, tr, th, a{
-    color: var(--colorstandard);
-  }
-
-  button:disabled{
-    opacity: 0.5;
-    cursor: no-drop;
   }
 
   @keyframes loader {

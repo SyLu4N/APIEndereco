@@ -1,21 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Container, Image } from './styles';
-import foto1 from '../../assets/location.svg';
-import { SaveApi } from '../SaveApi';
+import { Container } from './styles';
+import { Content } from '../Content';
+import { Form } from '../Form/Index';
+import { Loading } from '../Loading';
+import { Result } from '../Result';
 
 export function Main() {
+  const [cep, setCep] = useState('');
+  const [street, setStreet] = useState('');
+  const [district, setDistrict] = useState('');
+  const [city, setCity] = useState('');
+  const [region, setRegion] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [isResult, setIsResult] = useState(false);
+
   return (
     <Container>
-      <h1>CONSULTA CEP</h1>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum delectus
-        corporis sed assumenda velit blanditiis iste at, mollitia
-      </p>
-      <Image>
-        <img src={foto1} alt="" />
-        <SaveApi />
-      </Image>
+      <Content />
+      <Form
+        isLoading={isLoading}
+        cep={cep}
+        setCep={setCep}
+        setStreet={setStreet}
+        setDistrict={setDistrict}
+        setCity={setCity}
+        setRegion={setRegion}
+        setIsLoading={setIsLoading}
+        setIsResult={setIsResult}
+      />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <Result
+          cep={cep}
+          street={street}
+          region={region}
+          bairro={district}
+          cidade={city}
+          district={district}
+          isResult={isResult}
+        />
+      )}
     </Container>
   );
 }

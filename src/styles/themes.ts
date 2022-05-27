@@ -1,9 +1,11 @@
 export const ligthTheme = {
-  body: '#dbe7ff',
-  text: '#394863',
+  body: '#DEE9FE',
+  text: '#043F8C',
+  info: 'black',
 };
 
 export const darkTheme = {
-  body: 'black',
+  body: '#394863',
   text: 'white',
+  info: 'white',
 };

@@ -6,6 +6,7 @@ import { CepContext } from '../../CepContext';
 import { api } from '../../services/api';
 import voidLocais from '../../assets/voidLocais.svg';
 import { Container, Content, Locais, Void } from './styled';
+import { Link } from 'react-router-dom';
 
 export function Local() {
   const { resultCeps } = useContext(CepContext);
@@ -47,9 +48,9 @@ export function Local() {
             ))}
           </Container>
           <div className="back">
-            <a href="/">
+            <Link to="/">
               <BsFillArrowLeftSquareFill size={20} /> Voltar
-            </a>
+            </Link>
           </div>
         </Locais>
       ) : (
@@ -58,7 +59,7 @@ export function Local() {
             <h2>Ainda não temos locais salvos</h2>
             <p>Vamos salvar novos contatos?</p>
             <div>
-              <a href="/">Salvar novos locais</a>
+              <Link to="/">Salvar novos locais</Link>
             </div>
           </div>
           <img src={voidLocais} alt="Tela em construção" />

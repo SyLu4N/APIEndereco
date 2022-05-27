@@ -34,9 +34,9 @@ export function Result(props: ResultProps) {
         </div>
         <input type="text" disabled value={props.cidade} />
         <input type="text" disabled value={props.region} />
+        <span onClick={modelResultOpen}>Salvar CEP</span>
       </div>
       <Save>
-        <p onClick={modelResultOpen}>Salvar CEP</p>
         <ModalResult
           isOpen={isModelResult}
           modelResultClose={modelResultClose}

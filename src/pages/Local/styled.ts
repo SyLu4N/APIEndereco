@@ -27,6 +27,10 @@ export const Container = styled.div`
   div + div {
     border-top: 1px solid #ddd;
   }
+
+  p {
+    color: black;
+  }
 `;
 
 export const Content = styled.div`

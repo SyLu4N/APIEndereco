@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { CepContext } from '../../CepContext';
 
 import { Container, Content } from './styles';
@@ -31,7 +32,7 @@ export function SaveApi() {
             </tbody>
           </Content>
           <div>
-            <a href="/locais">Detalhes</a>
+            <Link to="/locais">Detalhes</Link>
           </div>
         </Container>
       ) : (

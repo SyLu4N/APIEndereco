@@ -5,7 +5,7 @@ export const FooterContainer = styled.footer`
   color: var(--colorstandard);
 
   position: absolute;
-  bottom: 3px;
+  bottom: -4rem;
   left: 42%;
 
   a {

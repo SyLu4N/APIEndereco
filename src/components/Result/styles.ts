@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: 2rem;
+  display: inline-block;
+  margin-top: 1rem;
 
   input {
     margin: 4px 0;
-    background-color: #ffffff7c;
+    background-color: #ffff;
   }
 
   p {
@@ -26,22 +27,26 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
   }
+
+  span {
+    display: block;
+    margin-top: 1rem;
+
+    text-align: right;
+    font-style: italic;
+    cursor: pointer;
+
+    transition: 200ms;
+
+    &:hover {
+      filter: brightness(0.4);
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+  }
 `;
 
 export const Save = styled.div`
   display: flex;
   justify-content: right;
-
-  p {
-    font-style: italic;
-    cursor: pointer;
-    margin-top: 0.5rem;
-    transition: 200ms;
-  }
-
-  p:hover {
-    filter: brightness(0.4);
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-  }
 `;

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const ContainerLoading = styled.div`
   position: absolute;
-  top: 15%;
-  left: 40%;
+  bottom: -11rem;
+  left: 9rem;
 
   div:nth-child(2) {
     animation-delay: -0.5s;
