@@ -4,7 +4,6 @@ export const Container = styled.div``;
 
 export const Form = styled.form`
   display: flex;
-  flex-direction: row;
   gap: 2rem;
   position: relative;
 
@@ -21,9 +20,10 @@ export const Form = styled.form`
     width: 200px;
     border-radius: 0.25rem;
     font-size: 2rem;
+    font-weight: 600;
     cursor: pointer;
     transition: 300ms;
-    color: white;
+    color: var(--colorbackground);
 
     .loading {
       animation: 60s loading infinite;
@@ -48,6 +48,22 @@ export const Form = styled.form`
 
   .inputModalCep {
     width: 150px;
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+
+    div {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background-color: transparent;
+    }
+
+    button {
+      position: static;
+      height: 40px;
+    }
   }
 `;
 

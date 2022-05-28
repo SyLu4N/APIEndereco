@@ -9,4 +9,5 @@ export const CepInput = styled.input`
   font-size: 1.5em;
 
   font-family: 'Quicksand';
+  margin-bottom: 2rem;
 `;

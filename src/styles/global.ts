@@ -31,6 +31,7 @@ export const GlobaStyle = createGlobalStyle`
     background: var(--colorbackground);
 
     transition: background-color 300ms;
+    overflow-x: hidden;
   }
 
   label button{
@@ -148,6 +149,7 @@ export const GlobaStyle = createGlobalStyle`
     margin-top: 5px;
     color: var(--colorError);
     max-width: 380px;
+    height: 25px;
   }
 
   .overlayModal {
@@ -168,6 +170,11 @@ export const GlobaStyle = createGlobalStyle`
     padding: 1rem 2rem;
     background: var(--colorbackground);
     border-radius: 0.25rem;
+
+    @media (max-width: 1000px) {
+      height: auto;
+      max-height: 300px;
+    }
   }
 
   .modalContent h1 {

@@ -24,8 +24,7 @@ export const Container = styled.div`
 
   @media (max-width: 950px) {
     position: fixed;
-    bottom: 20px;
-    right: 0;
+    right: 1rem;
 
     a {
       margin-top: 0;

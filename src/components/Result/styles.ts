@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: inline-block;
-  margin-top: 1rem;
+  margin-top: -1rem;
 
   input {
     margin: 4px 0;
