@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState, ReactNode } from 'react';
-import { api } from './services/api';
 
 import { Local } from './interfaces/Local';
 
