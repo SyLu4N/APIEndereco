@@ -3,7 +3,6 @@ import { ImBin } from 'react-icons/im';
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
 
 import { CepContext } from '../../CepContext';
-import { api } from '../../services/api';
 import voidLocais from '../../assets/voidLocais.svg';
 import { Container, Content, Locais, Void } from './styled';
 import { Link } from 'react-router-dom';
@@ -20,14 +19,12 @@ export function Local() {
   async function handleDelete(e: FormEvent, index: number): Promise<void> {
     e.preventDefault();
 
-    const local = resultCeps[index].id;
-
     const newCep = [...locais];
     newCep.splice(index, 1);
     resultCeps.splice(index, 1);
     setLocais(newCep);
 
-    await api.delete(`/${local}`);
+    localStorage.setItem('locais', JSON.stringify(newCep));
   }
 
   return (

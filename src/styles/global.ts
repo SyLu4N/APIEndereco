@@ -28,6 +28,8 @@ export const GlobaStyle = createGlobalStyle`
   body{
     padding: 20px 160px;
     background: var(--colorbackground);
+
+    transition: background-color 300ms;
   }
 
   label button{

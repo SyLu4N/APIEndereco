@@ -6,29 +6,33 @@ import { ImSun } from 'react-icons/im';
 import { Container, Theme } from './styles';
 import { darkTheme, ligthTheme } from '../../styles/themes';
 
-interface NavProps {
-  setTheme: (value) => void;
-  /* themeStorage: Theme; */
+interface HeaderProps {
+  setTheme: (value: Theme) => void;
+  theme: Theme;
 }
 
-type Theme = 'ligthTheme' | 'darkTheme';
+type darkTheme = {
+  type: string;
+  body: string;
+  text: string;
+  info: string;
+};
 
-export function Header(props: NavProps) {
-  const [theme, setThema] = useState<Theme>('darkTheme');
-  props.setTheme(theme);
+type ligthTheme = darkTheme;
+
+type Theme = ligthTheme | darkTheme;
+
+export function Header(props: HeaderProps) {
+  const [theme, setThema] = useState(props.theme);
 
   function handleTheme() {
-    if (theme === 'ligthTheme') {
-      setThema('darkTheme');
+    if (theme.type === 'dark') {
+      setThema(ligthTheme);
+      return props.setTheme(ligthTheme);
+    } else {
+      setThema(darkTheme);
       return props.setTheme(darkTheme);
     }
-
-    if (theme === 'darkTheme') {
-      setThema('ligthTheme');
-      return props.setTheme(ligthTheme);
-    }
-
-    console.log('ai');
   }
 
   return (
@@ -38,9 +42,9 @@ export function Header(props: NavProps) {
           <GoLocation /> <a href="/">Search Cep</a>
         </h1>
 
-        <Theme type="button" onClick={handleTheme}>
+        <Theme onClick={handleTheme} isType={theme.type}>
           <button>
-            {theme === 'ligthTheme' ? (
+            {theme.type === 'ligth' ? (
               <BsMoonStarsFill size={26} />
             ) : (
               <ImSun size={26} />

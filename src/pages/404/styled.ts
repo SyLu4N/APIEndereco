@@ -27,7 +27,7 @@ export const Container = styled.div`
     text-decoration: none;
     font-weight: bold;
 
-    color: white;
+    color: var(--colorbackground);
     background-color: var(--colorstandard);
     border-radius: 4px;
 

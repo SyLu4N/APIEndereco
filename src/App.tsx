@@ -6,29 +6,29 @@ import { Header } from './components/Header';
 import { GlobaStyle } from './styles/global';
 import { Footer } from './components/Footer';
 
-import { ligthTheme, darkTheme } from './styles/themes';
+import { ligthTheme } from './styles/themes';
+
+type themeStorageProps = {
+  type: string;
+  body: string;
+  text: string;
+  info: string;
+};
 
 export default function App() {
-  const [theme, setTheme] = useState(ligthTheme);
   const getThemeStorage = localStorage.getItem('theme');
+  const themeStorage: themeStorageProps = JSON.parse(getThemeStorage);
+  const themeFixed = themeStorage || ligthTheme;
 
-  const themeStorage = () => {
-    if (getThemeStorage === 'darkTheme') return setTheme(darkTheme);
-    if (getThemeStorage === 'ligthTheme') return setTheme(ligthTheme);
-    return setTheme(ligthTheme);
-  };
+  const [theme, setTheme] = useState(themeFixed);
 
-  const teste = themeStorage;
-  console.log(teste);
-
-  /* useEffect(() => {
-    localStorage.removeItem('theme');
-    localStorage.setItem('theme', theme);
-  }, [theme, setTheme]); */
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(theme));
+  }, [theme]);
 
   return (
     <CepProvider>
-      <Header setTheme={setTheme} /* themeStorage={themeStorage} */ />
+      <Header setTheme={setTheme} theme={theme} />
       <Routes />
       <GlobaStyle theme={theme} />
       <Footer />

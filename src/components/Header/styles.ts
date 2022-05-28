@@ -22,7 +22,11 @@ export const Container = styled.header`
   }
 `;
 
-export const Theme = styled.div`
+interface ThemeProps {
+  isType: string;
+}
+
+export const Theme = styled.div<ThemeProps>`
   margin-right: 1rem;
   z-index: 1;
   background-color: transparent;
@@ -35,7 +39,7 @@ export const Theme = styled.div`
   }
 
   svg {
-    color: #aaa;
+    color: ${({ isType }) => (isType === 'dark' ? '#DEE9FE' : '#394863')};
 
     padding: 1px;
     width: 30px;

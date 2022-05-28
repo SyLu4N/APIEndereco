@@ -103,7 +103,7 @@ export const Void = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 4px;
+    padding-bottom: 2px;
 
     height: 30px;
     width: 200px;
@@ -111,7 +111,7 @@ export const Void = styled.div`
     text-decoration: none;
     font-weight: bold;
 
-    color: white;
+    color: var(--colorbackground);
     background-color: var(--colorstandard);
     border-radius: 4px;
 

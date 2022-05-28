@@ -18,7 +18,9 @@ export function CepProvider({ children }: CepProviderProps) {
   const [resultCeps, setResultCeps] = useState<Local[]>([]);
 
   useEffect(() => {
-    api.get('/').then((response) => setResultCeps(response.data));
+    const locaisStorage = localStorage.getItem('locais');
+    const locais = JSON.parse(locaisStorage);
+    setResultCeps(locais);
   }, [setResultCeps]);
 
   async function createLocal(cep: Local) {
@@ -30,8 +32,8 @@ export function CepProvider({ children }: CepProviderProps) {
       bairro: cep.bairro,
     };
 
-    await api.post('/', data);
     const newCeps = [...resultCeps, data];
+    localStorage.setItem('locais', JSON.stringify(newCeps));
     setResultCeps(newCeps);
   }
 

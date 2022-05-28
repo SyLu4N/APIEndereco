@@ -21,8 +21,8 @@ export function SaveApi() {
               </tr>
             </thead>
             <tbody>
-              {resultCeps.map((local) => (
-                <tr key={local.id}>
+              {resultCeps.map((local, index) => (
+                <tr key={index}>
                   <td>{local.nome}</td>
                   <td>{local.rua}</td>
                   <td>{local.cidade}</td>
