@@ -45,9 +45,13 @@ export function Header(props: HeaderProps) {
         <Theme onClick={handleTheme} isType={theme.type}>
           <button>
             {theme.type === 'ligth' ? (
-              <BsMoonStarsFill size={26} />
+              <abbr title="Tema Escuro">
+                <BsMoonStarsFill size={26} />
+              </abbr>
             ) : (
-              <ImSun size={26} />
+              <abbr title="Tema Claro">
+                <ImSun size={26} />
+              </abbr>
             )}
           </button>
         </Theme>
