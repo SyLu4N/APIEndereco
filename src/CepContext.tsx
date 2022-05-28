@@ -19,7 +19,7 @@ export function CepProvider({ children }: CepProviderProps) {
   useEffect(() => {
     const locaisStorage = localStorage.getItem('locais');
     const locais = JSON.parse(locaisStorage);
-    setResultCeps(locais);
+    setResultCeps(locais || '');
   }, [setResultCeps]);
 
   async function createLocal(cep: Local) {

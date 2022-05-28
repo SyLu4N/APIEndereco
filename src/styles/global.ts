@@ -15,7 +15,8 @@ export const GlobaStyle = createGlobalStyle`
     box-sizing: border-box;
     border: none;
     outline: none;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 300;
   }
 
   :root{
@@ -26,7 +27,7 @@ export const GlobaStyle = createGlobalStyle`
   }
 
   body{
-    padding: 20px 160px;
+    padding: 20px 12%;
     background: var(--colorbackground);
 
     transition: background-color 300ms;
@@ -37,8 +38,8 @@ export const GlobaStyle = createGlobalStyle`
     align-items: center;
 
     position: absolute;
-    bottom: -14%;
-    right: 1%;
+    bottom: -15.5%;
+    right: 0.7%;
 
     height: 46px;
     padding: 16px;
@@ -94,50 +95,17 @@ export const GlobaStyle = createGlobalStyle`
     color: var(--colorstandard);
   }
 
-  @media (max-width: 1210px){
+  @media (max-width: 1050px){
     body{
-      padding: 20px 80px;
-    }
-  }
-
-  @media (max-width: 1000px){
-    body{
+      display: block;
       padding: 20px 50px;
     }
-
-    .image img{
-      margin-left: 60px;
-      width: 40vw;
-    }
-
-    .image p{
-      min-width: 350px;
-    }
-
   }
 
-  @media (max-width: 610px){
+  @media (max-width: 950px){
     body{
-      padding: 20px 20px;
-    }
-
-    .image{
       display: block;
-    }
-
-    .image img{
-      position: absolute;
-      top: 0;
-    }
-
-    .container{
-      display: flex;
-      justify-content: center;
-      margin: auto;
-    }
-
-    .error{
-      display: none;
+      padding: 20px 20px;
     }
   }
 

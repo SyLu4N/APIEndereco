@@ -10,8 +10,9 @@ export const Container = styled.div`
   }
 
   p {
-    margin-top: 20px;
+    margin-top: 0.8rem;
     font-weight: bold;
+    margin-left: 1.4rem;
   }
 
   input:nth-child(3) {
@@ -35,14 +36,24 @@ export const Container = styled.div`
     text-align: right;
     font-style: italic;
     cursor: pointer;
+    color: var(--colorstandard);
 
     transition: 200ms;
 
     &:hover {
-      filter: brightness(0.4);
+      filter: brightness(0.8);
       text-decoration: underline;
       text-underline-offset: 0.2em;
     }
+
+    @media (max-width: 950px) {
+      display: block;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 950px) {
+    display: block;
   }
 `;
 

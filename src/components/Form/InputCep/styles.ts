@@ -7,4 +7,6 @@ export const CepInput = styled.input`
   box-shadow: 0px 0px 2px var(--colorstandard);
   padding-left: 20px;
   font-size: 1.5em;
+
+  font-family: 'Quicksand';
 `;

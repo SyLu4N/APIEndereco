@@ -2,7 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.form`
   p {
-    margin-bottom: 10px;
+    margin-bottom: 0.2rem;
+    margin-left: 1.4rem;
+
+    font-weight: 600;
   }
 
   .success:focus {

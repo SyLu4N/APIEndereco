@@ -3,13 +3,14 @@ import styled from 'styled-components';
 export const Container = styled.div`
   position: absolute;
   top: 100%;
-  right: 0;
+  right: -3.5rem;
 
-  min-width: 550px;
+  min-width: 500px;
 
   div {
     text-align: right;
-    min-width: 550px;
+    min-width: 490px;
+    border: 1px solid black;
 
     a {
       display: inline-block;
@@ -26,6 +27,23 @@ export const Container = styled.div`
         text-decoration: underline;
         text-underline-offset: 0.2em;
       }
+    }
+
+    @media (max-width: 950px) {
+      margin-top: 60%;
+      margin-right: 0;
+      min-width: auto;
+    }
+  }
+
+  @media (max-width: 1050px) {
+    right: 0;
+  }
+
+  @media (max-width: 950px) {
+    display: block;
+    table {
+      display: none;
     }
   }
 `;

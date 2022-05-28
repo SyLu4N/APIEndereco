@@ -61,7 +61,7 @@ export function Form(props: FormProps) {
   return (
     <Container className="form" onSubmit={(e) => handleSubmit(e)}>
       <label htmlFor="">
-        <p className="paragraph">Digite seu CEP:</p>
+        <p>Digite seu CEP:</p>
         <Cep cep={props.cep} setCep={props.setCep} />
         <button className="button" disabled={props.isLoading}>
           Buscar CEP
