@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { CepContext } from '../../CepContext';
 
+import { Detalhes } from '../Detalhes';
+import { CepContext } from '../../CepContext';
 import { Container, Content } from './styles';
 
 export function SaveApi() {
@@ -31,9 +31,7 @@ export function SaveApi() {
               ))}
             </tbody>
           </Content>
-          <div>
-            <Link to="/locais">Detalhes</Link>
-          </div>
+          <Detalhes />
         </Container>
       ) : (
         ''

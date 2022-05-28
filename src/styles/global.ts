@@ -95,17 +95,20 @@ export const GlobaStyle = createGlobalStyle`
     color: var(--colorstandard);
   }
 
-  @media (max-width: 1050px){
+  @media (max-width: 1165px){
     body{
       display: block;
       padding: 20px 50px;
     }
   }
 
-  @media (max-width: 950px){
+  @media (max-width: 990px){
     body{
-      display: block;
+      display: flex;
+      justify-content: center;
       padding: 20px 20px;
+
+      width: 100vw;
     }
   }
 

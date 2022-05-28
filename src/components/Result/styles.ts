@@ -32,10 +32,11 @@ export const Container = styled.div`
   span {
     display: block;
     margin-top: 1rem;
+    cursor: pointer;
 
     text-align: right;
     font-style: italic;
-    cursor: pointer;
+    font-weight: 600;
     color: var(--colorstandard);
 
     transition: 200ms;

@@ -11,10 +11,6 @@ export const Container = styled.div`
     font-weight: 600;
   }
 
-  div {
-    max-width: 400px;
-  }
-
   p {
     font-size: 1.5em;
     margin-bottom: 30px;
@@ -22,23 +18,25 @@ export const Container = styled.div`
 
   @media (max-width: 950px) {
     display: block;
-  }
 
-  @media (max-width: 950px) {
     div {
       max-width: auto;
     }
   }
 `;
 
+export const ContentText = styled.div`
+  max-width: 400px;
+`;
+
 export const Image = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: end;
   align-items: center;
 
   position: relative;
   margin-top: 10rem;
+  min-width: 500px;
 
   img {
     width: 30vw;
@@ -56,9 +54,19 @@ export const Image = styled.div`
 
   @media (max-width: 950px) {
     display: block;
+    height: 2px;
+    position: static;
+    min-width: auto;
 
     img {
       display: none;
+    }
+
+    div {
+      position: static;
+      height: 20px;
+      margin: 0;
+      width: auto;
     }
   }
 `;
