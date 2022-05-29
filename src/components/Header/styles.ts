@@ -29,6 +29,7 @@ interface ThemeProps {
 export const Theme = styled.div<ThemeProps>`
   margin-right: 1rem;
   background-color: transparent;
+  z-index: 1;
 
   display: flex;
   align-items: center;
