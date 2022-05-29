@@ -35,12 +35,14 @@ export function Local() {
             {locais.map((local, index) => (
               <Content key={local.id}>
                 <span>{local.nome}</span> <div>|</div>
-                <p>{`${local.rua}, ${local.bairro} - ${local.cidade}`}</p>
-                <a href="" onClick={(e) => handleDelete(e, index)}>
-                  <abbr title="Excluir">
-                    <ImBin />
-                  </abbr>
-                </a>
+                <p>
+                  {`${local.rua}, ${local.bairro} - ${local.cidade}`}
+                  <a href="" onClick={(e) => handleDelete(e, index)}>
+                    <abbr title="Excluir">
+                      <ImBin />
+                    </abbr>
+                  </a>
+                </p>
               </Content>
             ))}
           </Container>

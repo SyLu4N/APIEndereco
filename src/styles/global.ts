@@ -17,6 +17,7 @@ export const GlobaStyle = createGlobalStyle`
     outline: none;
     font-family: 'Dosis', sans-serif;
     font-weight: 300;
+    overflow-x: hidden;
   }
 
   :root{
@@ -110,6 +111,12 @@ export const GlobaStyle = createGlobalStyle`
       padding: 20px 20px;
 
       width: 100vw;
+    }
+  }
+
+  @media (max-width: 950px) {
+    img{
+      display: none;
     }
   }
 

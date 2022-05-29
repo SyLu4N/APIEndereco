@@ -51,7 +51,9 @@ export const Content = styled.div`
   }
 
   p {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     text-align: center;
   }
@@ -79,6 +81,15 @@ export const Content = styled.div`
   div {
     font-size: 1.43rem;
     font-weight: 400;
+  }
+
+  @media (max-width: 950px) {
+    font-size: 87%;
+
+    span {
+      font-size: 1.2rem;
+      width: 120px;
+    }
   }
 `;
 
