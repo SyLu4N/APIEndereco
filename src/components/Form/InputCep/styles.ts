@@ -5,9 +5,13 @@ export const CepInput = styled.input`
   height: 50px;
   border-radius: 40px;
   box-shadow: 0px 0px 2px var(--colorstandard);
-  padding-left: 20px;
-  font-size: 1.5em;
+  padding-left: 1.4rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 
   font-family: 'Quicksand';
-  margin-bottom: 2rem;
+
+  @media (max-width: 950px) {
+    margin-bottom: 2rem;
+  }
 `;

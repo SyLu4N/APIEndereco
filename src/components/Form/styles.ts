@@ -6,6 +6,7 @@ export const Container = styled.form`
     margin-left: 1.4rem;
 
     font-weight: 600;
+    color: var(--colorstandard);
   }
 
   .success:focus {

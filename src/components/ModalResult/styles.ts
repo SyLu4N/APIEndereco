@@ -7,6 +7,10 @@ export const Form = styled.form`
   gap: 2rem;
   position: relative;
 
+  label p {
+    padding-left: 1.4rem;
+  }
+
   button {
     display: flex;
     justify-content: center;
@@ -30,12 +34,6 @@ export const Form = styled.form`
     }
   }
 
-  @keyframes loading {
-    0% {
-      transform: rotate(60000deg);
-    }
-  }
-
   button:hover {
     filter: brightness(0.9);
   }
@@ -48,6 +46,12 @@ export const Form = styled.form`
 
   .inputModalCep {
     width: 150px;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: rotate(60000deg);
+    }
   }
 
   @media (max-width: 1000px) {

@@ -27,7 +27,7 @@ export const GlobaStyle = createGlobalStyle`
   }
 
   body{
-    padding: 20px 12%;
+    padding: 1.3rem 12%;
     background: var(--colorbackground);
 
     transition: background-color 500ms;
@@ -39,11 +39,11 @@ export const GlobaStyle = createGlobalStyle`
     align-items: center;
 
     position: absolute;
-    bottom: -15.5%;
-    right: 0.7%;
+    bottom: -0.6rem;
+    right: 0.1rem;
 
-    height: 46px;
-    padding: 16px;
+    height: 2.85rem;
+    padding: 1rem;
 
     color: #fff;
     background-image: linear-gradient(to right, #84A7E8, #394863) ;
@@ -152,7 +152,7 @@ export const GlobaStyle = createGlobalStyle`
   }
 
   .errorParagraph{
-    margin-top: 5px;
+    margin-top: -1.4rem;
     color: var(--colorError);
     max-width: 380px;
     height: 25px;

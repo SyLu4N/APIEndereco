@@ -13,6 +13,8 @@ export const Container = styled.div`
     margin-top: 0.8rem;
     font-weight: bold;
     margin-left: 1.4rem;
+
+    color: var(--colorstandard);
   }
 
   input:nth-child(3) {

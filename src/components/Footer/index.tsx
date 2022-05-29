@@ -4,7 +4,7 @@ import { FooterContainer } from './styled';
 export function Footer() {
   return (
     <FooterContainer>
-      Feito com ❤️ por
+      <p>Feito com ❤️ por</p>
       <a href="https://github.com/SyLu4N" target="_blank" rel="noreferrer">
         Luan Simões
       </a>
