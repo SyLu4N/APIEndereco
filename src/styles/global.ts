@@ -17,7 +17,6 @@ export const GlobaStyle = createGlobalStyle`
     outline: none;
     font-family: 'Dosis', sans-serif;
     font-weight: 300;
-    overflow-x: hidden;
   }
 
   :root{
@@ -31,7 +30,7 @@ export const GlobaStyle = createGlobalStyle`
     padding: 20px 12%;
     background: var(--colorbackground);
 
-    transition: background-color 300ms;
+    transition: background-color 500ms;
     overflow-x: hidden;
   }
 

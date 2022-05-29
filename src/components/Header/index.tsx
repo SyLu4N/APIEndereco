@@ -25,13 +25,26 @@ type Theme = ligthTheme | darkTheme;
 export function Header(props: HeaderProps) {
   const [theme, setThema] = useState(props.theme);
 
-  function handleTheme() {
+  function handleTheme(e) {
+    const el = e.target.parentNode.parentNode;
+    el.classList.add('animaTheme');
+
     if (theme.type === 'dark') {
+      props.setTheme(ligthTheme);
       setThema(ligthTheme);
-      return props.setTheme(ligthTheme);
+
+      setTimeout(() => {
+        el.classList.remove('animaTheme');
+      }, 500);
+      return;
     } else {
+      props.setTheme(darkTheme);
       setThema(darkTheme);
-      return props.setTheme(darkTheme);
+
+      setTimeout(() => {
+        el.classList.remove('animaTheme');
+      }, 500);
+      return;
     }
   }
 

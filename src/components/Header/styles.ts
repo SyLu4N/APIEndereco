@@ -51,4 +51,20 @@ export const Theme = styled.div<ThemeProps>`
       filter: brightness(0.8);
     }
   }
+
+  .animaTheme {
+    animation: modifiqTheme 0.5s linear alternate;
+  }
+
+  @keyframes modifiqTheme {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;

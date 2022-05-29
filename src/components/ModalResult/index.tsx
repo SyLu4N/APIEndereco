@@ -77,6 +77,7 @@ export function ModalResult(props: ModalResultProps) {
               placeholder="Ex: Trabalho"
               onChange={(e) => setTitle(e.target.value)}
               value={title}
+              maxLength={8}
             />
           </label>
 
