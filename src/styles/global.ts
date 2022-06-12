@@ -20,7 +20,7 @@ export const GlobaStyle = createGlobalStyle`
     font-weight: 300;
   }
 
-  :root{
+  :root {
     --colorbackground: ${({ theme }: ThemeProps) => theme.body};
     --colorstandard: ${({ theme }: ThemeProps) => theme.text};
     --colorparagraph: ${({ theme }: ThemeProps) => theme.info};
@@ -28,7 +28,7 @@ export const GlobaStyle = createGlobalStyle`
     --details: ${({ theme }: ThemeProps) => theme.details};
   }
 
-  body{
+  body {
     padding: 1.3rem 12%;
     background: var(--colorbackground);
 
@@ -41,14 +41,13 @@ export const GlobaStyle = createGlobalStyle`
     }
 
     &::-webkit-scrollbar-thumb{
-      border-radius: 40px;
-      border: 1.5px solid var(--details);
+      border-left: 0.1px solid rgba(0, 0, 0, 0.2);
       background-color: var(--colorbackground);
     }
 
   }
 
-  label button{
+  label button {
     display: flex;
     align-items: center;
 
@@ -88,7 +87,7 @@ export const GlobaStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  button{
+  button {
     cursor: pointer;
 
     &:disabled{
@@ -97,7 +96,7 @@ export const GlobaStyle = createGlobalStyle`
     }
   }
 
-  input{
+  input {
     width: 350px;
     height: 50px;
     border-radius: 40px;
@@ -106,18 +105,18 @@ export const GlobaStyle = createGlobalStyle`
     font-size: 1.5em;
   }
 
-  h1, h2, h3, h4, h5, h6, td, tr, th, a{
+  h1, h2, h3, h4, h5, h6, td, tr, th, a {
     color: var(--colorstandard);
   }
 
-  @media (max-width: 1165px){
+  @media (max-width: 1165px)  {
     body{
       display: block;
       padding: 20px 50px;
     }
   }
 
-  @media (max-width: 990px){
+  @media (max-width: 990px) {
     body{
       display: flex;
       justify-content: center;
@@ -151,21 +150,21 @@ export const GlobaStyle = createGlobalStyle`
     }
   }
 
-  .error{
+  .error {
     width: 400px;
   }
 
-  label{
+  label {
     position: relative;
     font-weight: bold;
     color: #444040;
   }
 
-  .hidden{
+  .hidden {
     display: none;
   }
 
-  .errorParagraph{
+  .errorParagraph  {
     margin-top: -1.4rem;
     color: var(--colorError);
     max-width: 380px;
