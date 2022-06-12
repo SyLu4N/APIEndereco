@@ -34,6 +34,18 @@ export const GlobaStyle = createGlobalStyle`
 
     transition: background-color 500ms;
     overflow-x: hidden;
+
+    &::-webkit-scrollbar{
+      width: 12px;
+      background: var(--details);
+    }
+
+    &::-webkit-scrollbar-thumb{
+      border-radius: 40px;
+      border: 1.5px solid var(--details);
+      background-color: var(--colorbackground);
+    }
+
   }
 
   label button{
