@@ -3,6 +3,7 @@ export const ligthTheme = {
   body: '#DEE9FE',
   text: '#043F8C',
   info: 'black',
+  details: '#394863',
 };
 
 export const darkTheme = {
@@ -10,4 +11,5 @@ export const darkTheme = {
   body: '#394863',
   text: 'white',
   info: 'white',
+  details: '#DEE9FE',
 };

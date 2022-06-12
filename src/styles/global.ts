@@ -5,6 +5,7 @@ interface ThemeProps {
     body: string;
     text: string;
     info: string;
+    details: string;
   };
 }
 
@@ -24,6 +25,7 @@ export const GlobaStyle = createGlobalStyle`
     --colorstandard: ${({ theme }: ThemeProps) => theme.text};
     --colorparagraph: ${({ theme }: ThemeProps) => theme.info};
     --colorError: rgba(255, 0, 0, 0.671);
+    --details: ${({ theme }: ThemeProps) => theme.details};
   }
 
   body{
